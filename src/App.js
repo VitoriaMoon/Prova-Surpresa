@@ -6,34 +6,32 @@ import ValidarAcai from './service/service';
 
 export default function Acai() {
 
-  const [qtdp, setQtdp] = useState(0);
-  const [qtdm, setQtdm] = useState(0);
-  const [qtdg, setQtdg] = useState(0);
-  const [desc, setDesc] = useState(0);
-  const [preco, setPreco] = useState(0);
+  const [qtdp, setQtdp] = useState('');
+  const [qtdm, setQtdm] = useState('');
+  const [qtdg, setQtdg] = useState('');
+  const [desc, setDesc] = useState('');
+  const [preco, setPreco] = useState('');
 
   function Calc(){
     try {
       if(qtdp < 0){
-        setPreco('invaldio')
+        setPreco('Qtd Invalida')
       }
       else if(qtdm < 0 ){
-        setPreco('invaldio')
+        setPreco('Qtd Invalida')
       }
       else if ( qtdg < 0){
-        setPreco('invaldio')
+        setPreco('Qtd Invalida')
       }
       else{
         let total = qtdp * 13.50 + qtdm * 15.00 + qtdg * 17.50;
         let totaldesc = total * desc /100;
         let final =  total - totaldesc ;
         setPreco('O total a pagar é R$' + final);
-  
-      }
+        }
 
               
     } catch (error) {
-      erro: error.message('kkk')
     }
     
   }
