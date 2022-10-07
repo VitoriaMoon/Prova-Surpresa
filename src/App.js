@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './App.css';
+import ValidarAcai from './service/service';
 
 
 export default function Acai() {
@@ -12,10 +13,29 @@ export default function Acai() {
   const [preco, setPreco] = useState(0);
 
   function Calc(){
-    let total = qtdp * 13.50 + qtdm * 15.00 + qtdg * 17.50;
-    let totaldesc = total * desc /100;
-    let final =  total - totaldesc ;
-    setPreco(final);
+    try {
+      if(qtdp < 0){
+        setPreco('invaldio')
+      }
+      else if(qtdm < 0 ){
+        setPreco('invaldio')
+      }
+      else if ( qtdg < 0){
+        setPreco('invaldio')
+      }
+      else{
+        let total = qtdp * 13.50 + qtdm * 15.00 + qtdg * 17.50;
+        let totaldesc = total * desc /100;
+        let final =  total - totaldesc ;
+        setPreco('O total a pagar é R$' + final);
+  
+      }
+
+              
+    } catch (error) {
+      erro: error.message('kkk')
+    }
+    
   }
 
   useEffect(() =>{
@@ -26,14 +46,17 @@ export default function Acai() {
     <div className="App">
         <h1> AÇAÍ</h1>
         <p>AÇAÍ PEQUENO</p>
-        <input type='number' value={qtdp} onChange={e => setQtdp(e.target.value)}/>
+        <input type='number' value={qtdp} onChange={e => setQtdp(Number(e.target.value))}/>
         <p>AÇAÍ MEDIO</p>
         <input type='number' value={qtdm} onChange={e => setQtdm(e.target.value)}/>
         <p>AÇAÍ GRANDE</p>
         <input type='number' value={qtdg} onChange={e => setQtdg(e.target.value)}/>
         <p>DESCONTO %</p>
         <input type='number' value={desc} onChange={e => setDesc(e.target.value)} />
-        <h2>Total a pagar é:  R${preco}</h2>
+       
+          <p>{preco}</p>
+            
+          
 
         <Link to='/libra'>
         <button>descubra se seu signo é libra !!</button>

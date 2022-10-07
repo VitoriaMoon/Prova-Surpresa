@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 
-
-
 export default function Signo(){
-const [dia, setDia] = useState(0);
+const [dia, setDia] = useState('');
 const [mes, setMes] = useState('');
 const [resul, setResul] = useState('');
 
 function libra(){
     if (mes == "Setembro" && dia >= 23 || mes == 'Outubro' && dia <= 22) {
         setResul('seu signo é libra parabens')
-    } else {
+    }
+    else if(dia < 0){
+        setResul('erro')
+    }
+    else {
         setResul('seu signo não é libra parabens')
     }
 }
