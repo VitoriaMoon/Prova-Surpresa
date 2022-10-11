@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function Sorveteria(){
     
@@ -38,7 +39,12 @@ export default function Sorveteria(){
             }
             {gramas !=0 && 
             <p> O total a pagar é R${resul} </p>}
+            <Link to='/salario'>
+                <button>descubra seu salario liquido</button>
+            </Link>
             </div>
+
+            
         
 
     )
