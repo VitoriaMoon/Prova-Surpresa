@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
+import './index.css';
+
 
 export default function Signo(){
 const [dia, setDia] = useState('');

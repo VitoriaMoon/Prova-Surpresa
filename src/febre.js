@@ -17,10 +17,10 @@ export default function VerificarFebre(){
             <input type='number' value={temp} onChange={e => setTemp(e.target.value)}/>
             <button onClick={FebreClick}>descubra</button>
             <p>{resposta}</p>
-            <Link to='/'>
-            <button>volte ao inicio</button>
-            </Link>
             
+            <Link to='/cinema'>
+            <button>Compre ingressos com a gente</button>
+            </Link>
         </div>
     )
 }
