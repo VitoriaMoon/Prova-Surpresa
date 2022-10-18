@@ -3,7 +3,7 @@ export default function desenharRetangulo(l,c,simbolo){
     let retangulo = [];
 
     for(let i = 0; i<l; i++){
-        retangulo[i] = '*'
+        retangulo[i] = simbolo
     for(let j=0; j<c; j++){
         matriz [j] = new Array(retangulo)
     }
