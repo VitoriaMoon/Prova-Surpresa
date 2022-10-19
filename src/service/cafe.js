@@ -7,19 +7,14 @@ export default function Cafe(litros,alunos,mililitros){
             return 'número inválido'
         }
 
-        else if(mililitros >= 100000){
-            return 'mililitros invalido'
-        }
-       
-        else{
-            while(cafeteira > capacidade){
-                capacidade+=litros;
-            }
-            return 'Você precisará de: ' + capacidade + ' litros de café';
+        else if(mililitros>=100000){
+            return 'ml invalida'
         }
 
-       
-
+        while(cafeteira > capacidade){
+            capacidade+=litros
+        }
+        return 'Você precisará de: ' + capacidade + ' litros de café'    
         
     } 
     catch (err) {

@@ -2,28 +2,25 @@ import { useState } from "react";
 import Cafe from './service/cafe.js' 
 
 export default function Cafezin() {
-    const [litros, setLitros] = useState(1);
-    const [alunos, setAlunos] = useState(1);
-    const [ml,setMl]= useState(1)
-    const [ resposta, setResposta] = useState();
+    const [litros, setLitros] = useState();
+    const [alunos, setAlunos] = useState();
+    const [mililitros,setMililitros]= useState()
+    const [resposta, setResposta] = useState();
     
     function calcularQtdCafe(){
-
-        setResposta(Cafe (litros,alunos,ml) );
-
+            setResposta(Cafe(litros,alunos,mililitros));
     }
-
 
     return(
         <main>
-            <p>Capacidade</p>
-            <input type='number' value={litros} onChange={e => setLitros(e.target.value)}/>
-
             <p>Alunos</p>
-            <input type='number' value={alunos} onChange={e => setAlunos(e.target.value)}/>
+            <input type='number' value={alunos} onChange={e => setAlunos(Number(e.target.value))}/>
 
+            <p>Capacidade</p>
+            <input type='number' value={litros} onChange={e => setLitros(Number(e.target.value))}/>
+            
             <p>Mililitros</p>
-            <input type='number' value={ml} onChange={e => setMl(e.target.value)}/>
+            <input type='number' value={mililitros} onChange={e => setMililitros(Number(e.target.value))}/>
 
             <button onClick={calcularQtdCafe}>Calcular</button>
             <div>
