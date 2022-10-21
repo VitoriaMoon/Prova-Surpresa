@@ -13,6 +13,7 @@ import Contador from './contar';
 import Desenho from './desenhoLinha';
 import Retangulo from './retangulo';
 import Cafezin from './cafe';
+import Juros from './juros';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -31,6 +32,7 @@ root.render(
       <Route path='/desenhoLinha' element={<Desenho/>}/>
       <Route path='/retangulo' element={<Retangulo/>}/>
       <Route path='/cafe' element={<Cafezin/>}/>
+      <Route path='/juros' element={<Juros/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
