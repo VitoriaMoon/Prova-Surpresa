@@ -1,4 +1,4 @@
- export default function juroscomposto(capital, taxa ,tempo){
+ export  function juroscomposto(capital, taxa ,tempo){
     let Mes = tempo * 12;
     let msg = '';
 
